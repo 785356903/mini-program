@@ -1,2 +1,4 @@
-<!--pages/login/index.wxml-->
-<text>pages/login/index.wxml</text>
+<!--pages/login/index.wxml getUserProfile 替换 getUserInfo-->
+
+<!--<button type="primary"plain bindgetuserinfo="handleGetUserInfo" open-type="getUserInfo"> 登 录</button>-->
+<button type="primary"plain bindtap="handleGetUserProfile"> 登 录</button>

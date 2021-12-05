@@ -1,0 +1,115 @@
+/* pages/user/index.wxss */
+page {
+  background-color: #edece8;
+}
+.user_info_warp {
+  height: 45vh;
+  background-color: var(--themeColor);
+  .user_image_wrap {
+    position: relative;
+    .user_bg {
+      width: 100%;
+      height: 50vh;
+      overflow: hidden;
+      // css3 滤镜效果 模糊
+      -webkit-filter: blur(10rpx); /* Chrome, Safari, Opera */
+      filter: blur(10rpx);
+    }
+    .user_info {
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      .user_icon {
+        width: 150rpx;
+        height: 150rpx;
+        border-radius: 50%;
+      }
+      .user_name {
+        color: #fff;
+        margin-top: 40rpx;
+      }
+    }
+  }
+  .user_btn {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    border: 1rpx solid greenyellow;
+    color: greenyellow;
+    font-size: 40rpx;
+    padding: 15rpx 30rpx;
+    border-radius: 10rpx;
+  }
+}
+.user_content {
+  position: relative;
+  .user_main {
+    position: absolute;
+    width: 90%;
+    top: -40rpx;
+    left: 50%;
+    transform: translateX(-50%);
+    .history_wrap {
+      background-color: #fff;
+      display: flex;
+      navigator {
+        flex: 1;
+        text-align: center;
+        padding: 10rpx 0;
+        .his_num {
+          color: var(--themeColor);
+        }
+        .his_name {
+        }
+      }
+    }
+  }
+  .orders_warp {
+    background-color: #fff;
+    margin-top: 20rpx;
+    .orders_title {
+      padding: 15rpx;
+      border-bottom: 1rpx solid #ccc;
+    }
+    .orders_content {
+      display: flex;
+      padding: 15rpx 0;
+      navigator {
+        flex: 1;
+        text-align: center;
+        .iconfont {
+          color: var(--themeColor);
+          font-size: 40rpx;
+        }
+        .order_name {
+        }
+      }
+    }
+  }
+  .address_wrap {
+    margin-top: 30rpx;
+    background-color: #fff;
+    padding: 20rpx;
+  }
+  .app_info_wrap {
+    margin-top: 30rpx;
+    background-color: #fff;
+    .app_info_item {
+      padding: 20rpx;
+      border-bottom: 1rpx solid #ccc;
+    }
+    .app_info_contact {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  .recommend_wrap {
+    margin-top: 30rpx;
+    background-color: #fff;
+    padding: 20rpx;
+  }
+}

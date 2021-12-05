@@ -1,2 +1,9 @@
-<!--pages/auth/index.wxml-->
-<text>pages/auth/index.wxml</text>
+<!--
+open-tapy="getUserInfo" 获取用户的信息
+通过回调 bindgetuserinfo 获得
+    <button type="primary"plain bindtap="handleGetUserProfile"> 获取授权</button>
+-->
+    <!-- 获取用户匿名信息-->
+<button type="primary" plain open-type="getUserInfo" bindgetuserinfo="handleGetUserInfo" bindtap="handleGetUserProfile">
+    获取授权
+</button>

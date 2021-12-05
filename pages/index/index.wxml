@@ -1,10 +1,11 @@
 <view class="pay_index">
 <!--搜索框开始-->
-<Searchinput></Searchinput>
+
 <!--搜索框结束-->
 
 <!--轮播图开始-->
 <view class="index_swiper">
+  <Searchinput></Searchinput>
   <!--
   1.swiper标签存在默认宽高
   100% *150px
@@ -22,11 +23,10 @@
       <swiper-item 
       wx:for="{{swiperList}}" 
       wx:key="good_id">
-          <navigator>
+          <navigator url="../goods_detail/index?goods_id={{item.goods_id}}">
                <image src="{{item.image_src}}" mode="widthFix"></image>
           </navigator>
       </swiper-item>
-        
   </swiper>
  
 </view>
@@ -35,11 +35,13 @@
 <!--导航 开始-->
 <view class="index_cate">
   <navigator 
+  url="../../pages/category/index"
+  open-type="switchTab"
   wx:for="{{catesList}}" 
   wx:key="name">
-  <image  src="{{item.image_src}}" mode="widthFix">
+    <image  src="{{item.image_src}}" mode="widthFix">
     
-  </image>
+    </image>
     
   </navigator>
 </view>
@@ -61,16 +63,19 @@
     </view>
     <!-- 内容 -->
     <view class="floor_list">
-      <navigator 
+      <view 
+          open-type="switchTab"
           wx:for="{{item1.product_list}}"
           wx:for-item="item2"
           wx:for-index="index2"
           wx:key="name"
+          data-name='{{(item2.name)}}'
+          bindtap="handleUrl"
           >
             <image src="{{item2.image_src}}" mode="{{index2 ===0 ?'widthFix':'scaleToFill'}}">
 
             </image>
-          </navigator>
+          </view>
   </view>
 </view>
 </view>

@@ -1,2 +1,80 @@
 <!--pages/pay/index.wxml-->
-<text>pages/pay/index.wxml</text>
+<!--引入wxParse-->
+<import src="../../utils/wxParse/wxParse.wxml"/> 
+<!--收货地址-->
+
+<view class="revice_address_row">
+    <view  class="user_info_row">
+        <view class="user_info">
+            <view>收货人:{{address.userName}}</view>
+            <view>{{address.all}}</view>
+        </view>
+        <view class="user_phone">{{address.telNumber}}</view>
+    </view>
+</view>
+
+<!--购物车内容-->
+<view class="cart_content">
+    <view class="cart_title">购物车</view>
+    <view class="vart_main">
+    <!--cart 长度不为0 的时候显示 商品信息-->
+                <view class="cart_item"
+            wx:for="{{cart}}" 
+            wx:key="godds_id"
+            >
+                <!--商品图片-->
+                <view class="cart_img_wrap">
+                    <image mode="widthFix" src="{{item.goods_small_logo?item.goods_small_logo:'https://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg'}}">
+
+                    </image>
+                </view>
+                <!--商品信息-->
+                <view class="cart_info_wrap">
+                    <view class="goods_name">{{item.goods_name}}</view>
+                    <view class="goods_price_wrap">
+                        <view class="goods_price">￥ {{item.goods_price}} </view>
+                        <view class="goods_num_tool">
+                            <view class="goods_num">X {{item.num}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+      
+    </view>
+</view>
+
+
+
+<!--底部工具栏-->
+<view class="footer_tool">
+    
+    <!--总价格-->
+    <view class="total_price_wrap">
+        <view class="total_price">
+            合计:<text class="total_price_text">￥{{totalPrice}}</text>
+        </view>
+        <view>包含运费</view>
+    </view>
+    <!--支付-->
+    <view class="order_pay_wrap" bindtap="handleOrderPay">支付({{totalNum}})</view>
+</view>
+
+<block wx:if="{{payUrl}}">
+    <view class="pay_box">
+    <view class="payImg">
+        <block wx:if="{{iconUrl}}">
+            <image class="icon" src="{{iconUrl}}" mode="aspectFit"/>
+        </block>
+        <text class="pay_exit" bindtap="handleExit">X</text>
+        <text>微信支付</text>
+        <image class="QRcode" src="{{payUrl}}" mode="aspectFit" bindtap="handlePaySuccess"/>
+        <text>请扫描以上二维码进行支付</text>
+    </view>
+</view>
+<view class="cover">
+    
+</view>
+</block>
+
+
+

@@ -24,19 +24,19 @@
 .index_floor .floor_group .floor_list {
   overflow: hidden;
 }
-.index_floor .floor_group .floor_list navigator {
+.index_floor .floor_group .floor_list view {
   float: left;
   width: 33.33%;
 }
-.index_floor .floor_group .floor_list navigator:nth-last-child(-n + 4) {
+.index_floor .floor_group .floor_list view:nth-last-child(-n + 4) {
   height: calc(386 * 33.33vw / 232 / 2);
   border-left: 10rpx solid #fff;
 }
-.index_floor .floor_group .floor_list navigator:nth-child(2),
-.index_floor .floor_group .floor_list navigator:nth-child(3) {
+.index_floor .floor_group .floor_list view:nth-child(2),
+.index_floor .floor_group .floor_list view:nth-child(3) {
   border-bottom: 10rpx solid #fff;
 }
-.index_floor .floor_group .floor_list navigator image {
+.index_floor .floor_group .floor_list view image {
   height: 100%;
   width: 100%;
 }

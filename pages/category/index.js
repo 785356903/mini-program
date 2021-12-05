@@ -79,7 +79,7 @@ Page({
 
     // 1.使用es7的async await来发送请求
     const res = await request({ url: '/categories' });
-    this.Cates = res.data.message;
+    this.Cates = res;
     // 把接口的数据存入本地
     wx.setStorageSync('cates', { time: Date.now(), data: this.Cates });
     // 构造左侧的发菜单数据
@@ -94,7 +94,6 @@ Page({
 
   // 左侧菜单的点击事件
   handleItemTap(e) {
-    console.log(e);
     // 1.获取被点击的标题身上的索引
     // 2.给data中的currentIndex赋值就可以了
     // 3.根据不同的做因渲染不同的内容

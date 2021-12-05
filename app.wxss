@@ -1,4 +1,5 @@
 @import "./style/iconfont.wxss";
+/* @import "./utils/wxParse/wxParse.wxss"; */
 
 /* 在微信小程序中不支持 通配符*，会报错  @import 后面不加; 会报错 */
 page,
@@ -20,7 +21,7 @@ navigator {
 */
 page {
   /* 定义主题颜色 */
-  --themeColor: #eb4450;
+  --themeColor: #ff596f;
   /*
     定义统一字体大小  假设设计稿 大小是 375px 
     1px= 2rpx
